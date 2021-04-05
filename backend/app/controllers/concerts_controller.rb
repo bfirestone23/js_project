@@ -46,6 +46,6 @@ class ConcertsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def concert_params
-      params.require(:concert).permit(:artist, :venue, :attendees, :highlights, :lowlights, :photo)
+      params.require(:concert).permit(:artist, :venue, :attendees, :highlights, :lowlights, :photo, :user, :date)
     end
 end
