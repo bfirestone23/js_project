@@ -1,0 +1,43 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+body {
+    color: black;
+    background-image: url("../assets/background.jpeg");
+    font-family: Sans-serif, Tahoma;
+}
+
+#title {
+    padding: 1rem 0 0 0;
+    margin: auto;
+    text-align: center;
+}
+
+input, textarea {
+    background-color: #ffffff;
+    margin: .5rem .5rem;
+    padding: .5rem .5rem;
+}
+
+#concerts-form {
+    background: rgba(199, 199, 199, 0.5);
+    border: .25rem solid black;
+    margin: 5rem 15rem;
+    padding: 2rem 2rem;
+    box-shadow: 1rem 1rem 1rem black;
+
+}
+
+#concerts-container {
+    margin: 1rem auto;
+    width: 50%;
+}
+
+.concert-container {
+    background: rgba(199, 199, 199, 0.80);
+    border: .25rem solid black;
+    padding: 2rem 2rem;
+    margin: auto;
+    box-shadow: 1rem 1rem 1rem black;
+}
