@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_01_180945) do
+ActiveRecord::Schema.define(version: 2021_04_04_183358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "comments", force: :cascade do |t|
+    t.text "content"
+    t.string "user"
+    t.bigint "concert_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "concerts", force: :cascade do |t|
     t.string "artist"
@@ -22,17 +30,9 @@ ActiveRecord::Schema.define(version: 2021_04_01_180945) do
     t.string "highlights"
     t.string "lowlights"
     t.string "photo"
-    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_concerts_on_user_id"
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.string "email"
+    t.string "user"
   end
 
 end
