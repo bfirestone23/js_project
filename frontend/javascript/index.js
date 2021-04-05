@@ -30,36 +30,7 @@ function getConcerts() {
 // create concert form and add event listener
 function createConcertForm() {
     let concertsForm = document.getElementById('concerts-form')
-
-    concertsForm.innerHTML += 
-    `
-    <form>
-        <h3 id="concert-form-title">Add a Concert</h3>
-        <label for="user">Username</label>
-        <input type="text" id="user">
-        
-        <label for="artist">Artist</label>
-        <input type="text" id="artist">
-        
-        <label for="venue">Venue</label>
-        <input type="text" id="venue">
-        
-        <label for="date">Date</label>
-        <input type="date" id="date">
-        
-        <label for="attendees">Attendees</label>
-        <input type="text" id="attendees">
-        
-        <label for="highlights">Highlights</label>
-        <textarea id="highlights"></textarea>
-        
-        <label for="lowlights">Lowlights</label>
-        <textarea id="lowlights"></textarea>
-
-        
-        <input type="submit" value="Add Concert">
-    </form>
-    `
+    
     concertsForm.addEventListener('submit', concertFormSubmission)
 }
 
