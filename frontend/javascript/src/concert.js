@@ -1,14 +1,31 @@
 class Concert {
-    constructor(artist, venue, attendees, highlights, lowlights, photo){
+    constructor(id, artist, venue, date, attendees, highlights, lowlights, photo, user){
+        this.id = id;
         this.artist = artist;
         this.venue = venue;
+        this.date = date;
         this.attendees = attendees;
         this.highlights = highlights;
         this.lowlights = lowlights;
         this.photo = photo;
+        this.user = user;
     }
 
-    // how/when to associate concert with comment?
-
-    // instance method to render concert object to the DOM
+    // renders concert object to the DOM
+    renderConcert() {
+        let concertsDiv = document.getElementById('concerts-container')
+        concertsDiv.innerHTML +=
+        `
+        <div class="concert-container">
+            <h3>${this.artist} at ${this.venue}</h3>
+            <h4>${this.date}</h4>
+            <h5>Posted by: ${this.user}</h5>
+            <p>Attendees: ${this.attendees}</p>
+            <p>Highlights: ${this.highlights}</p>
+            <p>Lowlights: ${this.lowlights}</p>
+            <button class="delete-btn" onClick="deleteConcert()" data-id="${this.id}">Delete Concert</button>
+        </div>
+        `
+    }
+    
 }
