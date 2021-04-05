@@ -24,15 +24,6 @@ class ConcertsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /concerts/1
-  def update
-    if @concert.update(concert_params)
-      render json: @concert
-    else
-      render json: @concert.errors, status: :unprocessable_entity
-    end
-  end
-
   # DELETE /concerts/1
   def destroy
     @concert.destroy
