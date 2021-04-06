@@ -44,3 +44,7 @@ input, textarea {
     margin: 1rem;
     padding: 1rem;
 }
+
+.comment-user {
+    font-weight: bold;
+}
