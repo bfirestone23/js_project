@@ -12,8 +12,8 @@ class Comment {
         let commentsDiv = document.querySelector(`div#comments-${this.concert_id}`)
         commentsDiv.innerHTML +=
         `<div>
-            <h6>${this.user}</h6>
-            <p>${this.content}</p>
+            <p class="comment-user">Comment by ${this.user}:</p>
+            <p class="comment-content">${this.content}</p>
         </div>
         `
     }
