@@ -29,13 +29,14 @@ class Concert {
             <div>
                 <div id="comments-${this.id}" class="comments-container">
                 </div>
-                <form>
+                <form id="comment-form-${this.id}">
                     <input type="text">
-                    <input type="submit" value="Add Comment">
+                    <input id="comment-submit-${this.id}" type="submit">
                 </form>
             </div>
         </div>
         `
+        addCommentFormListener(this.id);
     }
     
 }
