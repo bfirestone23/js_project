@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     getConcerts();
     getComments();
     createConcertForm();
+    createCommentForm();
 })
 
 // fetch concerts index
@@ -107,7 +108,6 @@ function getComments() {
     fetch(`${BASE_URL}/comments`)
     .then(resp => resp.json())
     .then(comments => {
-        // debugger;
         for (const comment of comments) {
             let c = new Comment(
                 comment.content,
@@ -119,6 +119,11 @@ function getComments() {
     })
 }
 
-
 // create - new comment
+    //create form
+    //gather data + POST to db
 
+function createCommentForm() {
+    let commentForm = document.getElementsByClassName('comments-container');
+
+}
