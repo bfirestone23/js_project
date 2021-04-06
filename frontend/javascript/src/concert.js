@@ -17,13 +17,17 @@ class Concert {
         concertsDiv.innerHTML +=
         `
         <div class="concert-container">
-            <h3>${this.artist} at ${this.venue}</h3>
-            <h4>${this.date}</h4>
-            <h5>Posted by: ${this.user}</h5>
-            <p>Attendees: ${this.attendees}</p>
-            <p>Highlights: ${this.highlights}</p>
-            <p>Lowlights: ${this.lowlights}</p>
-            <button class="delete-btn" onClick="deleteConcert()" data-id="${this.id}">Delete Concert</button>
+            <div>
+                <h3>${this.artist} at ${this.venue}</h3>
+                <h4>${this.date}</h4>
+                <h5>Posted by: ${this.user}</h5>
+                <p>Attendees: ${this.attendees}</p>
+                <p>Highlights: ${this.highlights}</p>
+                <p>Lowlights: ${this.lowlights}</p>
+                <button class="delete-btn" onClick="deleteConcert()" data-id="${this.id}">Delete Concert</button>
+            </div>
+            <div id="comments-${this.id}" class="comments-container">
+            </div>
         </div>
         `
     }
