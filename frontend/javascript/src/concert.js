@@ -26,7 +26,13 @@ class Concert {
                 <p>Lowlights: ${this.lowlights}</p>
                 <button class="delete-btn" onClick="deleteConcert()" data-id="${this.id}">Delete Concert</button>
             </div>
-            <div id="comments-${this.id}" class="comments-container">
+            <div>
+                <div id="comments-${this.id}" class="comments-container">
+                </div>
+                <form>
+                    <input type="text">
+                    <input type="submit" value="Add Comment">
+                </form>
             </div>
         </div>
         `
