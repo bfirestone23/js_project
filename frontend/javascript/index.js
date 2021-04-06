@@ -2,6 +2,7 @@ const BASE_URL = "http://localhost:3000"
 
 document.addEventListener('DOMContentLoaded', () => {
     getConcerts();
+    getComments();
     createConcertForm();
 })
 
@@ -102,5 +103,22 @@ function deleteConcert() {
 
 
 // read - fetch concert comments 
+function getComments() {
+    fetch(`${BASE_URL}/comments`)
+    .then(resp => resp.json())
+    .then(comments => {
+        // debugger;
+        for (const comment of comments) {
+            let c = new Comment(
+                comment.content,
+                comment.user,
+                comment.concert_id
+            )
+            c.renderComment();
+        }
+    })
+}
+
+
 // create - new comment
 
