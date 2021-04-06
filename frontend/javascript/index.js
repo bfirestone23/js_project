@@ -3,8 +3,7 @@ const BASE_URL = "http://localhost:3000"
 document.addEventListener('DOMContentLoaded', () => {
     getConcerts();
     getComments();
-    createConcertForm();
-    createCommentForm();
+    addConcertFormListener();
 })
 
 // fetch concerts index
@@ -30,7 +29,7 @@ function getConcerts() {
 }
 
 // create concert form and add event listener
-function createConcertForm() {
+function addConcertFormListener() {
     let concertsForm = document.getElementById('concerts-form')
     
     concertsForm.addEventListener('submit', concertFormSubmission)
@@ -123,7 +122,13 @@ function getComments() {
     //create form
     //gather data + POST to db
 
-function createCommentForm() {
-    let commentForm = document.getElementsByClassName('comments-container');
+function addCommentFormListener(concertID) {
+    // debugger;
+    const commentForm = document.getElementById(`comment-form-${concertID}`)
+    commentForm.addEventListener('submit', commentFormSubmission)
+}
 
+function commentFormSubmission() {
+    event.preventDefault();
+    console.log("clicked!");
 }
