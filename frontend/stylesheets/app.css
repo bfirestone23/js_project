@@ -1,6 +1,6 @@
-*, *:before, *:after {
+/* *, *:before, *:after {
     box-sizing: border-box;
-}
+} */
 
 body {
     color: black;
@@ -10,8 +10,9 @@ body {
 }
 
 #title {
-    padding: 1rem 0 0 0;
+    /* padding: 1rem 0 0 0; */
     margin: auto;
+    padding: 3rem 0 0 0;
     text-align: center;
 }
 
@@ -24,10 +25,11 @@ input, textarea {
 #concerts-form {
     background: rgba(199, 199, 199, 0.5);
     border: .25rem solid black;
-    margin: 5rem 15rem;
+    /* margin: auto;
+    padding: 2rem 2rem; */
+    margin: 2rem 2rem;
     padding: 2rem 2rem;
     box-shadow: 1rem 1rem 1rem black;
-
 }
 
 #concerts-container {
