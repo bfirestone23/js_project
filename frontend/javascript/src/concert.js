@@ -45,15 +45,16 @@ class Concert {
                 <div class="concert-info">
                     <h3>${this.artist} at ${this.venue}</h3>
                     <h4>${this.date}</h4>
-                    <h5>Posted by: ${this.user}</h5>
+                    <h5>Posted by ${this.user}</h5>
                 </div>
                 <div class="concert-info">
-                    <p>Attendees: ${this.attendees}</p>
-                    <p>Highlights: ${this.highlights}</p>
-                    <p>Lowlights: ${this.lowlights}</p>
+                    <p class="concert-info-title">Attended by ${this.attendees}</p>
+                    <p class="concert-info-title">Highlights: ${this.highlights}</p>
+                    <p class="concert-info-title">Lowlights: ${this.lowlights}</p>
                 </div>
                 <button class="delete-btn btn btn-dark" onClick="deleteConcert()" data-id="${this.id}">Delete Concert</button>
             </div>
+            <hr>
         </div>
         `
         this.renderConcertCommentSection();
