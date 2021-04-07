@@ -23,6 +23,22 @@ input, textarea {
     padding: 2rem 2rem;
 }
 
+#user-input {
+    width: 35%;
+}
+
+#artist-input {
+    width: 50%;
+}
+
+#venue-input {
+    width: 50%;
+}
+
+#date-input {
+    width: 30%;
+}
+
 #concerts-container {
     margin: 1rem auto;
     width: 50%;
