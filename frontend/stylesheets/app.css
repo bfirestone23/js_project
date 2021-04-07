@@ -19,10 +19,8 @@ input, textarea {
 
 #concerts-form {
     background: rgba(199, 199, 199, 0.5);
-    border: .25rem solid black;
     margin: 2rem 2rem;
     padding: 2rem 2rem;
-    box-shadow: 1rem 1rem 1rem black;
 }
 
 #concerts-container {
@@ -31,20 +29,54 @@ input, textarea {
 }
 
 .concert-container {
-    display: grid;
     justify-content: center;
     background: rgba(199, 199, 199, 0.80);
-    border: .25rem solid black;
     padding: 1rem 1rem;
     margin: 2rem;
-    box-shadow: 1rem 1rem 1rem black;
 }
 
 .comments-container {
-    margin: 1rem;
-    padding: 1rem;
+    margin: 0;
+    padding: .5rem;
 }
 
-.comment-user {
+.comment-container {
+    border: 1px solid gray;
+    padding: .5rem;
+    margin: .5rem;
+    background: rgba(199, 199, 199, 1);
+}
+
+form.comment-form {
+    padding: 1rem;
+    margin: 0;
+}
+
+input.comment-user {
+    width: 30%;
+}
+
+textarea.comment-content {
+    width: 75%;
+    /* padding: 1rem; */
+    /* margin: 0; */
+}
+
+.concert-info {
+    display: inline-block;
+    padding: .5rem 1rem .5rem 1rem;
+    margin: .5rem;
+}
+
+.delete-btn {
+    float:inline-end;
+    margin: 0 0 0 2rem;
+}
+
+p.comment-user {
     font-weight: bold;
+}
+
+p.comment-content {
+    padding: 0 0 0 2rem;
 }
