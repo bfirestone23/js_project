@@ -125,13 +125,11 @@ const addCommentFormListener = (concertID) => {
 }
 
 const commentFormSubmission = (e) => {
-    debugger;
     e.preventDefault();
 
-    let user = document.getElementById('form-comment-user').value;
-    let content = document.getElementById('form-comment-content').value;
     let concert_id = parseInt(e.target.dataset.id);
-    debugger;
+    let user = document.getElementById(`${e.target.dataset.id}-comment-user`).value;
+    let content = document.getElementById(`${e.target.dataset.id}-comment-content`).value;
 
     let comment = {user, content, concert_id};
     createComment(comment);
