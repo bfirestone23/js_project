@@ -15,17 +15,20 @@ class Concert {
         let concertDiv = document.getElementById(`concert-${this.id}-container`)
         concertDiv.innerHTML +=
         `
-        <div>
+        <div class="container-fluid">
             <div id="comments-${this.id}" class="comments-container">
             </div>
-            <form data-id="${this.id}" id="comment-form-${this.id}">
-                <label for="comment-user">Leave comment as:</label>
-                <input id="comment-user" type="text">
+            <form class="comment-form" data-id="${this.id}" id="comment-form-${this.id}">
+                <div class="form-group">
+                    <label class="sr-only" for="comment-user">Leave comment as:</label>
+                    <input placeholder="Username" id="form-comment-user" class="comment-user form-control" type="text">
+                </div>
 
-                <label for="comment-content">Your comment:</label>
-                <textarea id="comment-content"></textarea>
-
-                <input type="submit">
+                <div class="form-group">
+                    <label class="sr-only" for="comment-content">Your comment:</label>
+                    <textarea placeholder="Comment" id="form-comment-content" class="comment-content form-control"></textarea>
+                </div>
+                <input class="comment-submit btn btn-dark" type="submit" value="Submit Comment">
             </form>
         </div>
         `
@@ -37,15 +40,19 @@ class Concert {
         let concertsDiv = document.getElementById('concerts-container')
         concertsDiv.innerHTML +=
         `
-        <div id="concert-${this.id}-container" class="concert-container">
+        <div id="concert-${this.id}-container" class="container-fluid concert-container">
             <div>
-                <h3>${this.artist} at ${this.venue}</h3>
-                <h4>${this.date}</h4>
-                <h5>Posted by: ${this.user}</h5>
-                <p>Attendees: ${this.attendees}</p>
-                <p>Highlights: ${this.highlights}</p>
-                <p>Lowlights: ${this.lowlights}</p>
-                <button class="delete-btn" onClick="deleteConcert()" data-id="${this.id}">Delete Concert</button>
+                <div class="concert-info">
+                    <h3>${this.artist} at ${this.venue}</h3>
+                    <h4>${this.date}</h4>
+                    <h5>Posted by: ${this.user}</h5>
+                </div>
+                <div class="concert-info">
+                    <p>Attendees: ${this.attendees}</p>
+                    <p>Highlights: ${this.highlights}</p>
+                    <p>Lowlights: ${this.lowlights}</p>
+                </div>
+                <button class="delete-btn btn btn-dark" onClick="deleteConcert()" data-id="${this.id}">Delete Concert</button>
             </div>
         </div>
         `
