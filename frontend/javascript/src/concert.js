@@ -11,12 +11,33 @@ class Concert {
         this.user = user;
     }
 
+    renderConcertCommentSection = () => {
+        let concertDiv = document.getElementById(`concert-${this.id}-container`)
+        concertDiv.innerHTML +=
+        `
+        <div>
+            <div id="comments-${this.id}" class="comments-container">
+            </div>
+            <form data-id="${this.id}" id="comment-form-${this.id}">
+                <label for="comment-user">Leave comment as:</label>
+                <input id="comment-user" type="text">
+
+                <label for="comment-content">Your comment:</label>
+                <textarea id="comment-content"></textarea>
+
+                <input type="submit">
+            </form>
+        </div>
+        `
+        addCommentFormListener(this.id);
+    }
+
     // renders concert object to the DOM
-    renderConcert() {
+    renderConcert = () => {
         let concertsDiv = document.getElementById('concerts-container')
         concertsDiv.innerHTML +=
         `
-        <div class="concert-container">
+        <div id="concert-${this.id}-container" class="concert-container">
             <div>
                 <h3>${this.artist} at ${this.venue}</h3>
                 <h4>${this.date}</h4>
@@ -26,17 +47,10 @@ class Concert {
                 <p>Lowlights: ${this.lowlights}</p>
                 <button class="delete-btn" onClick="deleteConcert()" data-id="${this.id}">Delete Concert</button>
             </div>
-            <div>
-                <div id="comments-${this.id}" class="comments-container">
-                </div>
-                <form id="comment-form-${this.id}">
-                    <input type="text">
-                    <input id="comment-submit-${this.id}" type="submit">
-                </form>
-            </div>
         </div>
         `
-        addCommentFormListener(this.id);
+        this.renderConcertCommentSection();
+        
     }
     
 }
