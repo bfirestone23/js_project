@@ -39,13 +39,13 @@ const addConcertFormListener = () => {
 const concertFormSubmission = (e) => {
     e.preventDefault();
 
-    let user = document.getElementById('user').value
-    let artist = document.getElementById('artist').value
-    let venue = document.getElementById('venue').value
-    let date = document.getElementById('date').value
-    let attendees = document.getElementById('attendees').value
-    let highlights = document.getElementById('highlights').value
-    let lowlights = document.getElementById('lowlights').value
+    let user = document.getElementById('user-input').value
+    let artist = document.getElementById('artist-input').value
+    let venue = document.getElementById('venue-input').value
+    let date = document.getElementById('date-input').value
+    let attendees = document.getElementById('attendees-input').value
+    let highlights = document.getElementById('highlights-input').value
+    let lowlights = document.getElementById('lowlights-input').value
 
     let concert = {
         user,
@@ -125,11 +125,13 @@ const addCommentFormListener = (concertID) => {
 }
 
 const commentFormSubmission = (e) => {
+    debugger;
     e.preventDefault();
 
     let user = document.getElementById('form-comment-user').value;
     let content = document.getElementById('form-comment-content').value;
     let concert_id = parseInt(e.target.dataset.id);
+    debugger;
 
     let comment = {user, content, concert_id};
     createComment(comment);
