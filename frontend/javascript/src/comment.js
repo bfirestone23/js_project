@@ -6,7 +6,7 @@ class Comment {
     }
 
     // instance method to render comment object to the DOM
-    renderComment() {
+    renderComment = () => {
         let commentsDiv = document.querySelector(`div#comments-${this.concert_id}`)
         commentsDiv.innerHTML +=
         `
