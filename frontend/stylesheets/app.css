@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 body {
     color: black;
     background-image: url("../assets/background.jpeg");
     background-attachment: fixed;
-    font-family: Sans-serif, Tahoma;
+    font-family: 'Poppins', sans-serif;
 }
 
 #title {
@@ -19,24 +21,45 @@ input, textarea {
 
 #concerts-form {
     background: rgba(199, 199, 199, 0.5);
-    margin: 2rem 2rem;
-    padding: 2rem 2rem;
+    margin: 2rem auto;
+    padding: 1rem 1rem .5rem 1rem;
+    justify-content: space-around;
+    align-items: center;
+    width: 75%;
 }
 
 #user-input {
-    width: 35%;
+    width: 10rem;
 }
 
 #artist-input {
-    width: 50%;
+    width: 15rem;
 }
 
 #venue-input {
-    width: 50%;
+    width: 18rem;
 }
 
 #date-input {
-    width: 30%;
+    width: 12rem;
+}
+
+#attendees-input {
+    width: 18rem;
+    max-width: 100%;
+}
+
+#highlights-input {
+    width: 30rem;
+}
+
+#lowlights-input {
+    width: 30rem;
+}
+
+#add-concert-btn {
+    margin: auto;
+    padding: 1rem;
 }
 
 #concerts-container {
@@ -58,9 +81,10 @@ input, textarea {
 
 .comment-container {
     border: 1px solid gray;
-    padding: .5rem;
+    padding: .5rem 0 0 .5rem;
     margin: .5rem;
     background: rgba(199, 199, 199, 1);
+    width: 75%;
 }
 
 form.comment-form {
@@ -69,13 +93,12 @@ form.comment-form {
 }
 
 input.comment-user {
-    width: 30%;
+    width: 12rem;
 }
 
 textarea.comment-content {
-    width: 75%;
-    /* padding: 1rem; */
-    /* margin: 0; */
+    width: 80%;
+    padding: 1rem;
 }
 
 .concert-info {
@@ -91,8 +114,11 @@ textarea.comment-content {
 
 p.comment-user {
     font-weight: bold;
+    font-size: 1rem;
 }
 
 p.comment-content {
-    padding: 0 0 0 2rem;
+    /* padding: 0 0 0 2rem; */
+    font-size: .75rem;
 }
+
