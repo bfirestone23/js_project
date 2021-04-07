@@ -10,8 +10,8 @@ class Comment {
         let commentsDiv = document.querySelector(`div#comments-${this.concert_id}`)
         commentsDiv.innerHTML +=
         `
-        <div>
-            <p class="comment-user">Comment by ${this.user}:</p>
+        <div class="comment-container">
+            <p class="comment-user">@${this.user}:</p>
             <p class="comment-content">${this.content}</p>
         </div>
         `
