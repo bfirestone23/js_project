@@ -1,14 +1,14 @@
 const BASE_URL = "http://localhost:3000"
 
 document.addEventListener('DOMContentLoaded', () => {
-    getConcerts();
-    getComments();
+    getConcerts().then(() => {
+        getComments();
+    });
     addConcertFormListener();
 })
 
-// fetch concerts index
 const getConcerts = () => {
-    fetch(`${BASE_URL}/concerts`)
+    return fetch(`${BASE_URL}/concerts`)
     .then(resp => resp.json())
     .then(concerts => {
         for (const concert of concerts) {
@@ -17,6 +17,7 @@ const getConcerts = () => {
                 concert.artist,
                 concert.venue,
                 concert.date,
+                concert.date_formatted,
                 concert.attendees,
                 concert.highlights,
                 concert.lowlights,
@@ -46,7 +47,7 @@ const concertFormSubmission = (e) => {
     let attendees = document.getElementById('attendees-input').value
     let highlights = document.getElementById('highlights-input').value
     let lowlights = document.getElementById('lowlights-input').value
-
+    
     let concert = {
         user,
         artist,
@@ -61,7 +62,6 @@ const concertFormSubmission = (e) => {
     event.target.reset();
 }
 
-// POST submitted concert data to db and render
 const createConcert = (concert) => {
     fetch(`${BASE_URL}/concerts`, {
         method: 'POST',
@@ -88,7 +88,6 @@ const createConcert = (concert) => {
     })
 }
 
-// delete concert and reload page
 const deleteConcert = () => {
     let concertId = parseInt(event.target.dataset.id);
 
@@ -98,8 +97,7 @@ const deleteConcert = () => {
 
     this.location.reload();
 }
-
-// read - fetch concert comments 
+ 
 const getComments = () => {
     fetch(`${BASE_URL}/comments`)
     .then(resp => resp.json())
@@ -119,12 +117,13 @@ const getComments = () => {
     //create form
     //gather data + POST to db
 
-const addCommentFormListener = (concertID) => {
-    let commentForm = document.getElementById(`comment-form-${concertID}`)
+const addCommentFormListener = () => {
+    let commentForm = document.getElementById(`concerts-container`)
     commentForm.addEventListener('submit', commentFormSubmission)
 }
 
 const commentFormSubmission = (e) => {
+    
     e.preventDefault();
 
     let concert_id = parseInt(e.target.dataset.id);
