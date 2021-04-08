@@ -1,9 +1,10 @@
 class Concert {
-    constructor(id, artist, venue, date, attendees, highlights, lowlights, photo, user){
+    constructor(id, artist, venue, date, date_formatted, attendees, highlights, lowlights, photo, user){
         this.id = id;
         this.artist = artist;
         this.venue = venue;
         this.date = date;
+        this.date_formatted = date_formatted;
         this.attendees = attendees;
         this.highlights = highlights;
         this.lowlights = lowlights;
@@ -17,10 +18,9 @@ class Concert {
         concertsDiv.innerHTML +=
         `
         <div id="concert-${this.id}-container" class="container-fluid concert-container">
-            <div>
                 <div class="concert-info">
                     <h3>${this.artist} at ${this.venue}</h3>
-                    <h4>${this.date}</h4>
+                    <h4>${this.date_formatted}</h4>
                     <h5>Posted by ${this.user}</h5>
                     <p><strong>Attended by</strong> ${this.attendees}</p>
                 </div>
@@ -31,12 +31,10 @@ class Concert {
                     <p>${this.lowlights}</p>
                 </div>
                 <button class="hidden delete-btn btn btn-dark" onClick="deleteConcert()" data-id="${this.id}">Delete Concert</button>
-            </div>
             <hr>
         </div>
         `
         this.renderConcertCommentSection();
-        
     }
 
     renderConcertCommentSection = () => {
@@ -60,7 +58,7 @@ class Concert {
             </form>
         </div>
         `
-        addCommentFormListener(this.id);
+        addCommentFormListener();
     }
     
 }
