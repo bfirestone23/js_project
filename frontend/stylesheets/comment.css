@@ -1,0 +1,36 @@
+.comments-container {
+    margin: 0;
+    padding: .5rem;
+}
+
+.comment-container {
+    border: 1px solid gray;
+    padding: .5rem 0 0 .5rem;
+    margin: .5rem;
+    background: rgba(199, 199, 199, 1);
+    width: 75%;
+}
+
+form.comment-form {
+    padding: 1rem;
+    margin: 0;
+}
+
+input.comment-user {
+    width: 12rem;
+}
+
+textarea.comment-content {
+    width: 80%;
+    padding: 1rem;
+}
+
+p.comment-user {
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+p.comment-content {
+    /* padding: 0 0 0 2rem; */
+    font-size: .75rem;
+}
