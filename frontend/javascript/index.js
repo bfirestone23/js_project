@@ -1,13 +1,11 @@
 const BASE_URL = "http://localhost:3000"
 
 document.addEventListener('DOMContentLoaded', () => {
-    getConcerts().then(() => {
-        getComments();
-    });
+    getConcertsWithComments();
     addConcertFormListener();
 })
 
-const getConcerts = () => {
+const getConcertsWithComments = () => {
     return fetch(`${BASE_URL}/concerts`)
     .then(resp => resp.json())
     .then(concerts => {
@@ -25,6 +23,14 @@ const getConcerts = () => {
                 concert.user
             )
             c.renderConcert();
+            for (const comment of concert.comments) {
+                let com = new Comment(
+                    comment.content,
+                    comment.user,
+                    comment.concert_id
+                )
+                com.renderComment();
+            }
         }
     })
 }
@@ -59,7 +65,7 @@ const concertFormSubmission = (e) => {
     }
 
     createConcert(concert)
-    event.target.reset();
+    e.target.reset();
 }
 
 const createConcert = (concert) => {
@@ -97,25 +103,6 @@ const deleteConcert = () => {
 
     this.location.reload();
 }
- 
-const getComments = () => {
-    fetch(`${BASE_URL}/comments`)
-    .then(resp => resp.json())
-    .then(comments => {
-        for (let comment of comments) {
-            let c = new Comment(
-                comment.content,
-                comment.user,
-                comment.concert_id
-            )
-            c.renderComment();
-        }
-    })
-}
-
-// create - new comment
-    //create form
-    //gather data + POST to db
 
 const addCommentFormListener = () => {
     let commentForm = document.getElementById(`concerts-container`)
@@ -135,8 +122,6 @@ const commentFormSubmission = (e) => {
 
     e.target.reset();
 }
-
-
 
 const createComment = (comment) => {
     fetch(`${BASE_URL}/comments`, {
