@@ -3,9 +3,9 @@ class ConcertsController < ApplicationController
 
   # GET /concerts
   def index
-    @concerts = Concert.all
+    concerts = Concert.all
 
-    render json: @concerts
+    render json: concerts, include: [:comments]
   end
 
   # GET /concerts/1
