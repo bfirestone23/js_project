@@ -32,7 +32,7 @@ Fill out the concert form and submit, and your addition will render below. You o
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/bfirestone23/js_project.
+Bug reports and pull requests are welcome on GitHub at https://github.com/bfirestone23/tour-diary.
 
 ## License
 
