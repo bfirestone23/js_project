@@ -20,7 +20,7 @@ Then, navigate to the frontend directory, open up a new terminal, and open the a
 
 ```open index.html```
 
-Or, use Node.js to auto-reload the page when any file is saved:
+Or, use Node.js to hot-reload the page when any file is saved:
 
 ```npx reload -b```
 
