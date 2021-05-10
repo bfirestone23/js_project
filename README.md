@@ -2,6 +2,10 @@
 
 A RESTful web application concept built with a Ruby on Rails JSON API backend + JavaScript/HTML/CSS/Bootstrap frontend that allows users to document concerts they've attended and comment on them.
 
+## Demo
+
+[Click here to view a demo!](https://drive.google.com/file/d/1nwNGIEJ6ks7GlXnFwLyJ_TlqG6KG9V5b/view?usp=sharing) 
+
 ## Installation
 
 Fork and clone this repository. Then, in the backend directory, install all dependencies:
