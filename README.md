@@ -2,6 +2,10 @@
 
 A RESTful web application concept built with a Ruby on Rails JSON API backend + JavaScript/HTML/CSS/Bootstrap frontend that allows users to document concerts they've attended and comment on them.
 
+## Demo
+
+[Click here to view a demo!](https://drive.google.com/file/d/1nwNGIEJ6ks7GlXnFwLyJ_TlqG6KG9V5b/view?usp=sharing) 
+
 ## Installation
 
 Fork and clone this repository. Then, in the backend directory, install all dependencies:
@@ -20,7 +24,7 @@ Then, navigate to the frontend directory, open up a new terminal, and open the a
 
 ```open index.html```
 
-Or, use Node.js to auto-reload the page when any file is saved:
+Or, use Node.js to hot-reload the page when any file is saved:
 
 ```npx reload -b```
 
@@ -32,7 +36,7 @@ Fill out the concert form and submit, and your addition will render below. You o
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/bfirestone23/js_project.
+Bug reports and pull requests are welcome on GitHub at https://github.com/bfirestone23/tour-diary.
 
 ## License
 
